@@ -15,6 +15,7 @@ def missing_number(nums, max_num):
     for num in range(1, max_num + 1):
         if num not in new_nums:
             return num
+    return '{}'.format('No numbers missing')        
 
             
 
