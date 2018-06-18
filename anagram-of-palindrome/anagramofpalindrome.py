@@ -32,11 +32,11 @@ def is_anagram_of_palindrome(word):
     is_palindrome = {}
     for letter in word:
         is_palindrome[letter] = is_palindrome.get(letter, 0) + 1
-    
+ 
     count = 0
     for val in is_palindrome.values():
         if val % 2 != 0:
-            count +=1
+            count += 1
     return count == 1        
 
 
