@@ -17,8 +17,6 @@ def missing_number(nums, max_num):
             return num
     return '{}'.format('No numbers missing')        
 
-            
-
 
 if __name__ == '__main__':
     import doctest
