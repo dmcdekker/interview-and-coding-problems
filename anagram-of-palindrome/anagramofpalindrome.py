@@ -37,7 +37,7 @@ def is_anagram_of_palindrome(word):
     for val in is_palindrome.values():
         if val % 2 != 0:
             count += 1
-    return count == 1        
+    return count <= 1        
 
 
 
