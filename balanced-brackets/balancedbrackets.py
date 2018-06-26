@@ -68,6 +68,51 @@ def has_balanced_brackets(phrase):
           if not stack or pairs[char] != stack.pop():
               return False
     return not stack
+
+# alt solution
+# def has_balanced_brackets(phrase):
+#     """Does a given string have balanced pairs of brackets?
+
+#     Given a string as input, return True or False depending on whether the
+#     string contains balanced (), {}, [], and/or <>.
+#     """
+
+#     # START SOLUTION
+
+#     closers_to_openers = {")": "(", "]": "[", "}": "{", ">": "<"}
+
+#     # Set of all opener characters; used to match openers quickly.
+#     openers = set(closers_to_openers.values())
+
+#     # Create an empty list to use as a stack.
+#     openers_seen = []
+
+#     for char in phrase:
+
+#         # Push open brackets onto the stack.
+
+#         if char in openers:
+#             openers_seen.append(char)
+
+#         # For closers:
+#         #
+#         # - if nothing is open; fail fast
+#         # - if we are the twin of the most recent opener, pop & continue
+#         # - else we're the twin to a different opener; fail fast
+
+#         elif char in closers_to_openers:
+
+#             if openers_seen == []:
+#                 return False
+
+#             if openers_seen[-1] == closers_to_openers.get(char):
+#                 openers_seen.pop()
+
+#             else:
+#                 return False
+
+#     # An empty stack means the brackets are balanced.
+#     return openers_seen == []    
         
 
         
