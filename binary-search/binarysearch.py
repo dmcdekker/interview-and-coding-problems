@@ -35,7 +35,6 @@ def binary_search(val):
     while mid != val:
         num_guesses += 1
         mid = (high - low) / 2 + low
-
         if val > mid:
             low = mid
         elif val < mid:
