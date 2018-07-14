@@ -5,7 +5,7 @@
 #palindrome
 #wild_sum
 #lucky_number
-#oddball_sum 
+#oddball_sum
 #disemvowel
 
 ##################### Crazy Sum ###################
