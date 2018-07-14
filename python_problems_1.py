@@ -10,15 +10,6 @@
 
 ##################### Crazy Sum ###################
 
-def crazy_sum(numbers):
-    '''Multiply number by index and sum total'''
-    sum = 0
-    index = 0
-    while index < len(numbers):
-        sum += numbers[index] * index
-        index += 1
-    return sum
-
 '''
     >>> crazy_sum([2])
     0
@@ -29,37 +20,38 @@ def crazy_sum(numbers):
     >>> crazy_sum([2, 3, 5, 2])
     19
 '''
-##################### Square Nums ###################
 
-def square_nums(max):
-    '''Find max square number'''
-    num = 0
-    idx = 0
-    while idx*idx < max:
-        idx += 1
-        num += 1
-    return num 
+def crazy_sum(numbers):
+    '''Multiply number by index and sum total'''
+    sum = 0
+    index = 0
+    while index < len(numbers):
+        sum += numbers[index] * index
+        index += 1
+    return sum
+
+
+#################### Square Nums ###################
 
 '''
     >>> square_nums(5)
-    2 
+    2
     >>> square_nums(10)
     3
     >>> square_nums(25)
     4
 '''
 
-##################### Crazy Nums ###################
+def square_nums(max):
+    '''Find max square number'''
+    num = 0
+    idx = 1
+    while idx*idx < max:
+        num += 1
+        idx += 1
+    return num 
 
-def crazy_nums(lst):
-    '''Find numbers divisible by 3 or 5 but not both'''
-    divisible_list = []
-    for num in lst:
-        if num % 3 and num % 5:
-            continue
-        elif num % 3 or num % 5:
-            divisible_list.append(num)
-    return divisible_list
+##################### Crazy Nums ###################
 
 '''
     >>> crazy_nums(20)
@@ -70,7 +62,27 @@ def crazy_nums(lst):
     []
 '''
 
+def crazy_nums(number):
+    '''Find numbers divisible by 3 or 5 but not both'''
+    divisible_list = []
+    for num in range(1, number):
+        if num % 3 and num % 5:
+            continue
+        elif num % 3 or num % 5:
+            divisible_list.append(num)
+    return divisible_list
+
+
 ##################### Palindrome_1 ###################
+
+'''
+    >>> is_palindrome_1('racecar')
+    True
+    >>> is_palindrome_1('noon')
+    True
+    >>> is_palindrome_1('notme')
+    False
+'''
 
 def is_palindrome_1(string):
     '''Return true if string is a palindrome'''
@@ -83,23 +95,8 @@ def is_palindrome_1(string):
         last -= 1
     return True
 
-'''
-    >>> is_palindrome_1('racecar')
-    True
-    >>> is_palindrome_1('noon')
-    True
-    >>> is_palindrome_1('notme')
-    False
-'''
 
 ##################### Palindrome_2 ###################
-
-def is_palindrome_2(string):
-    '''Return true if string is a palindrome'''
-    for letter in range(0, len(string)/2):
-        if string[letter] != string[len(string)-letter-1]:
-            return False
-    return True
 
 '''
     >>> is_palindrome_2('racecar')
@@ -110,19 +107,15 @@ def is_palindrome_2(string):
     False
 '''
 
-##################### Wild Sum ###################
+def is_palindrome_2(string):
+    '''Return true if string is a palindrome'''
+    for letter in range(0, len(string)/2):
+        if string[letter] != string[len(string)-letter-1]:
+            return False
+    return True
 
-def wild_sum(number):
-    '''Define a method that sums all the numbers less than n that are:
-        Divisible by 2 or divisible by 3, but not divisible by both
-    '''
-    sum = 0
-    for num in range(0, len(number)):
-        if num % 2 and num % 3:
-            continue
-        elif num % 2 or num % 3:
-            sum += num 
-    return sum
+
+##################### Wild Sum ###################
 
 '''
     >>> wild_sum(0)
@@ -135,7 +128,31 @@ def wild_sum(number):
     9
 '''
 
+def wild_sum(number):
+    '''Define a method that sums all the numbers less than n that are:
+        Divisible by 2 or divisible by 3, but not divisible by both
+    '''
+    sum = 0
+    for num in range(1, number):
+        if num % 2 and num % 3:
+            continue
+        elif num % 2 or num % 3:
+            sum += num 
+    return sum
+
+
 ##################### Lucky Seven ###################
+
+'''
+    >>> lucky_number([2, 1, 5, 1, 0], 7)
+    True
+    >>> lucky_number([0, -2, 1, 8], 6)
+    False
+    >>> lucky_number([6, 7, 7, 7], 21)
+    True
+    >>> lucky_number([3, 4, 3, 4], 7)
+    False
+'''
 
 def lucky_number(lst, number):
     '''Return true if the sum of 3 consecutive numbers == number'''
@@ -143,22 +160,22 @@ def lucky_number(lst, number):
         three_nums = lst[num:num+3]
         if sum(three_nums) == number:
             return True
-    return False
-
-'''
-    >>> lucky_number([2, 1, 5, 1, 0], 7)
-    True
-    >>> lucky_number([0, -2, 1, 8], 6)
-    False
-    >>> lucky_number([7, 7, 7, 7], 21)
-    True
-    >>> lucky_number([3, 4, 3, 4], 7)
-    False   
-'''
+    print False
 
 ##################### Odd Sums ###################
 
-def oddball_sum(numbers):
+'''
+    >>> odd_sum([1, 2, 3, 4, 5])
+    9
+    >>> odd_sum([0, 6, 4, 4])
+    0
+    >>> odd_sum([7, 7, 7, 7])
+    28
+    >>> odd_sum([1, 2, 1])
+    2
+'''
+
+def odd_sum(numbers):
     '''Accepts array of numbers and returns sum of all odd elements'''
     total = 0
     for num in numbers:
@@ -166,25 +183,7 @@ def oddball_sum(numbers):
             total = total + num
     return total
 
-'''
-    >>> odd_sum([1, 2, 3, 4, 5])
-    9
-    >>> odd_sum([0, 6, 4, 4])
-    0
-    >>> odd_sum([7, 7, 7, 7], 21)
-    True
-    >>> odd_sum([1, 2, 1])
-    2   
-'''
-
 ##################### Disemvowel ###################
-
-def disemvowel(string):
-    result = ''
-    vowels = set('a', 'e', 'i', 'o', 'u')
-    if letter not in vowels:
-        result += letter
-    return result
 
 '''
     >>> disemvowel('foobar')
@@ -194,6 +193,15 @@ def disemvowel(string):
     >>> disemvowel("aeiou")
     ''
 '''
+
+def disemvowel(string):
+    result = ''
+    vowels = ('a', 'e', 'i', 'o', 'u')
+    for letter in string:
+        if letter not in vowels:
+            result += letter
+    return result
+
 
 
 if __name__ == '__main__':
