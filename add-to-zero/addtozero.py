@@ -20,7 +20,6 @@ zero for both numbers, and they sum to zero:
     True
 """
 
-
 def add_to_zero(nums):
     """Given list of ints, return True if any two nums sum to 0."""
     set_nums = set(nums)
