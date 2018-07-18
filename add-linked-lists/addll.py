@@ -63,7 +63,7 @@ class Node(object):
             out.append(str(n.data))
             n = n.next
 
-        return "".join(reversed(out))
+        return ''.join(reversed(out))
 
 
 def add_linked_lists(l1, l2):
