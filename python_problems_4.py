@@ -165,7 +165,7 @@ def largest_prime_factor(number):
         if number % factor == 0:
             number /= factor
         factor += 1
-    return number        
+    return number    
 
 ##################### Tests ###################
 

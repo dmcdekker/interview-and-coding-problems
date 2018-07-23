@@ -49,9 +49,8 @@ def reverse_linked_list(head):
     n = head
 
     while n:
-        # duplicate each node
+        # duplicate each node 
         new_head = Node(n.data, new_head)
-
         # change direction of pointers
         n = n.next
 
