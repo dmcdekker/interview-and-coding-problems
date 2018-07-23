@@ -2,6 +2,7 @@ import unittest
 
 
 def merge_lists(lst1, lst2):
+    '''Merge two sorted lists'''
     if len(lst1) == 0:
         return lst2
     elif len(lst2) == 0:

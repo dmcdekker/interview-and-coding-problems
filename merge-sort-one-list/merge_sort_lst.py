@@ -29,8 +29,6 @@ def mergesort(alist):
         return merge(lst1, lst2)
 
 
-print mergesort([4, 2, 6, 1, 15, -3])
-
 class Test(unittest.TestCase):
 
     def test_list_is_empty(self):
