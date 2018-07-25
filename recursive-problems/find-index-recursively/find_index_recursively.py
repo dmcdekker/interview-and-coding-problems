@@ -23,7 +23,7 @@ Important: Solve this problem only with recursion; you cannot use a for or while
 Below we give you an empty function, recursive_index; please implement this method:
 '''
 
-def recursive_index(needle, haystack):
+def recursive_index(needle, haystack, index=0):
     """Given list (haystack), return index (0-based) of needle in the list.
 
     Return None if needle is not in haystack.
