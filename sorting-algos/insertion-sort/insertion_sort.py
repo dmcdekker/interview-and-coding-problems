@@ -11,7 +11,7 @@ def insertion_sort(alist):
             index -= 1
             alist[index] = current
 
-    return alist
+        return alist
 
 
 class Test(unittest.TestCase):

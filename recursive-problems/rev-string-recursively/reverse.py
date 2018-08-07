@@ -13,7 +13,6 @@ For example::
 
 """
 
-
 def rev_string(astring):
     """Return reverse of string using recursion.
 

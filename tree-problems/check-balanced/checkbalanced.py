@@ -112,30 +112,23 @@ class BinaryNode(object):
         def num_descendants(node):
             """Returns number of descendants or None if already imbalanced."""
             # use recursion to add up nodes
-            # return of None means imbalanced
+            # depth of the two subtrees of every node never differ > 1
 
             # base case
             if not node:
                 return 0
 
-            left = num_descendants(node.left)
+            # call recursive function
+            left, right = num_descendants(node.left), num_descendants(node.right)
 
-            # check for balanced left tree: fail quickly
-            if left is None:
-                return None
-
-            right = num_descendants(node.right)
-            # check for balanced right tree: fail quickly
-            if right is None:
-                return None
-
-            if abs(left - right) > 1:
-                # if tree heights > 1 they are imbalanced
+            # if node height < 0 or difference > 1 they are imbalanced
+            if left < 0 or right < 0 or abs(left - right) > 1:
                 return None
 
             # return height if tree is balanced
             return max(left, right) + 1
 
+        # return of None means imbalanced
         return num_descendants(self) is not None
 
   
