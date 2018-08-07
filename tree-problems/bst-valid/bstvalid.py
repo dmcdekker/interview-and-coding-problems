@@ -91,15 +91,12 @@ class Node:
             if gt is not None and node.data < gt:
                 return False
 
-            # general case: check our left child
             # all descendants of left child must be
             # less than our data (and greater than
             # whatever we had to be greater than).
             if not check_nodes(node.left, node.data, gt):
                 return False
 
-            
-            # general case: check our right child
             # all descendants of right child must be
             # greater than our data (and less than
             # whatever we had to be less than)

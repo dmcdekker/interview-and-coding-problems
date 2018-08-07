@@ -118,23 +118,22 @@ class BinaryNode(object):
             if not node:
                 return 0
 
-            
             left = num_descendants(node.left)
 
-            # quick check for None: fail quickly
+            # check for balanced left tree: fail quickly
             if left is None:
                 return None
 
             right = num_descendants(node.right)
-            # quick check for None: fail quickly
+            # check for balanced right tree: fail quickly
             if right is None:
                 return None
 
             if abs(left - right) > 1:
-                # Heights vary by more than 1 -- imbalanced!
+                # if tree heights > 1 they are imbalanced
                 return None
 
-            # Height of this node is height of our deepest descendant + ourselves
+            # return height if tree is balanced
             return max(left, right) + 1
 
         return num_descendants(self) is not None
