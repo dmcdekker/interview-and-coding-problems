@@ -21,10 +21,9 @@ Let's make sure we have non-commutative operators working:
     3
 """
 
-
 def calc(s):
     '''Evaluate expression'''
-    items = s.split() 
+    items = s.split()
     operand2 = int(items.pop())
     while items:
         operand1 = int(items.pop())
