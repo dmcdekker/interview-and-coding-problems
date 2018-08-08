@@ -34,6 +34,29 @@ def rev_list_in_place(lst):
     for idx in range(len(lst)//2):
         lst[idx], lst[-idx-1] = lst[-idx-1], lst[idx]
 
+'''Alt solution'''
+
+def rev_list_in_place(lst):
+    """Reverse list in place.
+
+    You cannot do this with reversed(), .reverse(), or list slice
+    assignment!
+    """
+
+    # intializing pointers
+    left = 0
+    right = len(lst)-1
+
+    # condition for termination
+    while left < right:
+        temp = lst[left]
+        lst[left] = lst[right]
+        lst[right] = temp
+
+        # move pointers
+        left += 1
+        right -= 1
+
 
 if __name__ == '__main__':
     import doctest
