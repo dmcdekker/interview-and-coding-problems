@@ -28,4 +28,4 @@ def show_evens(nums):
 if __name__ == '__main__':
     import doctest
     if doctest.testmod().failed == 0:
-        print "\n*** ALL TESTS PASSED. EVENLY HANDLED!\n"
+        print("\n*** ALL TESTS PASSED. EVENLY HANDLED!\n")
