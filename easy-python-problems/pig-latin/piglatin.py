@@ -24,17 +24,18 @@ def pig_latin(phrase):
         >>> pig_latin('hello awesome programmer')
         'ellohay awesomeyay rogrammerpay'
     """
-    new_phrase = []
-    vowel = ('a', 'e', 'i', 'o', 'u')
-    for word in phrase.split(' '):
-        if word[0] in vowel:
-            new_phrase.append(word + 'yay')
+    pl_string = []
+    vowels = {'a', 'e', 'i', 'o', 'u'}
+    for word in phrase.split():
+        if word[0] in vowels:
+            word += 'yay'
         else:
-            new_phrase.append(word[1:] + word[0] + 'ay')
-    return ' '.join(new_phrase) 
+            word = word[1:] + word[0] + 'ay'
+        pl_string.append(word)
+    return ' '.join(pl_string)
 
 
 if __name__ == '__main__':
     import doctest
     if doctest.testmod().failed == 0:
-        print "\n*** ALL TESTS PASSED. REATGAY OBJAY!\n"
+        print("\n*** ALL TESTS PASSED. REATGAY OBJAY!\n")
