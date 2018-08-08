@@ -9,7 +9,6 @@ For example::
     False
 """
 
-
 def is_pangram(sentence):
     """Given a string, return True if it is a pangram, False otherwise."""
     new_sentence = {}
@@ -22,4 +21,4 @@ def is_pangram(sentence):
 if __name__ == "__main__":
     import doctest
     if doctest.testmod().failed == 0:
-        print "\n*** ALL TESTS PASSED. YAY!\n"
+        print ("\n*** ALL TESTS PASSED. YAY!\n")
