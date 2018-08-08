@@ -19,7 +19,6 @@ For example::
 
 """
 
-
 def print_digits(num):
     """Given int, print digits in reverse order, starting with the ones place."""
     # 413 % 10 -> 3
@@ -36,4 +35,4 @@ def print_digits(num):
 if __name__ == '__main__':
     import doctest
     if doctest.testmod().failed == 0:
-        print "\n*** ALL TESTS PASSED. WOWZA!\n"
+        print("\n*** ALL TESTS PASSED. WOWZA!\n")
