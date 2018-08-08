@@ -31,7 +31,7 @@ def remove_duplicates(items):
 if __name__ == '__main__':
     import doctest
     if doctest.testmod().failed == 0:
-        print "\n*** ALL TESTS PASSED. GREAT WORK!\n"
+        print ("\n*** ALL TESTS PASSED. GREAT WORK!\n")
 
 
 
