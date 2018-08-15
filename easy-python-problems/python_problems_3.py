@@ -21,7 +21,8 @@
 '''
 
 def reverse_digits(number):
-    '''Define a method that reverses the digits of its argument and returns the resulting list of numbers'''
+    '''Define a method that reverses the digits of its argument and 
+    returns the resulting list of numbers'''
     rev_lst = []
     for num in range(1, number + 1):
         rev_lst.append(num)
@@ -41,9 +42,12 @@ def reverse_digits(number):
 '''    
 
 def pair_product(arr, target_product):
-    '''Define a method, that accepts two arguments: a list of integers and a target_product (an integer). The method returns a boolean indicating whether any pair of elements in the array multiplied together equals that product'''
+    '''Define a method, that accepts two arguments: 
+    a list of integers and a target_product (an integer). 
+    The method returns a boolean indicating whether any pair 
+    of elements in the array multiplied together equals that product'''
     for idx1 in range(0, len(arr)):
-        for idx2 in range(0, len(arr)):
+        for idx2 in range(1, len(arr)):
             if arr[idx1] * arr[idx2] == target_product:
                 return True
     return False
@@ -174,15 +178,24 @@ def boolean_to_binary(boolean_lst):
     3
 '''
 
+'''
+    >>> third_largest([5, 9, 9, 3, 7, 7, 2, 10])
+    7
+    >>> third_largest([5, 10, 3])
+    3
+'''
+
+from operator import itemgetter
+
 def third_largest(lst):
     '''Define a method that returns the third-largest element in an array (assume at least 3 elems)'''
     nums_dict = {}
     for num in lst:
         nums_dict[num] = nums_dict.get(num, 0) + 1
-    sorted_dict = sorted((key, val) for key, val in nums_dict.items())
-    print sorted_dict
-    # return 3rd largest key (key in first place)
-    return sorted_dict[-3][0]
+    
+    sorted_dict = sorted(nums_dict.items())[-3][0]
+    return sorted_dict
+
 
 ##################### Date TIme Conversion ###################
 

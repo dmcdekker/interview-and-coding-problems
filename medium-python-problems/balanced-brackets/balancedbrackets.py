@@ -69,6 +69,41 @@ def has_balanced_brackets(phrase):
               return False
     return not stack
 
+
+# solution from interview
+# def balanced_brackets(string):
+#     if not string:
+#         raise ValueError('String is empty')
+#     bracket_dict = {')':'(', ']':'['}
+#     vals = set(bracket_dict.values())
+#     stack = []
+#     for char in string:
+#         if char in vals:
+#             stack.append(char)
+#         elif char in bracket_dict:
+#             if not stack or bracket_dict[char] != stack.pop():
+#                 return False
+#     return not stack
+
+# tests = [
+#     ("", "String is empty"),
+#     ("123[", False),
+#     ('123[009]', True),
+#     ('123[009]]', False),
+#     (']abc', False),
+#     ('[]]abc[', False),
+#     ('a(b[c)d]', False),
+#     ('a(bc[d]ef)g', True)   
+# ]
+
+# for i, (t, exp) in enumerate(tests):
+#     try:
+#         r = balanced_brackets(t)
+#     except ValueError as e:
+#         r = str(e)
+#     print "%d. '%s' -> %s (%s)" % (i + 1, t, r, "SUCCESS" if r == exp else "FAIL") 
+
+
 # alt solution
 # def has_balanced_brackets(phrase):
 #     """Does a given string have balanced pairs of brackets?
