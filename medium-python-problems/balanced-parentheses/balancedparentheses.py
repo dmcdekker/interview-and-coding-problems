@@ -36,6 +36,9 @@ def has_balanced_parens(phrase):
         
       elif char == ')':
         open_ -= 1
+
+      if open_ == -1:
+        return False 
        
     return open_ == 0   
 
