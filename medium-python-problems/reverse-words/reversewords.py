@@ -53,8 +53,8 @@ def rev(s):
     in_space = None
 
     for letter in s:
-
-        if letter == " ":
+        # if space
+        if letter == ' ':
             if not in_space:
                 # Switch from space -> letter: add the current
                 # (letter-y) token and restart our current_token
