@@ -37,7 +37,7 @@ Let's make sure it works when we can spend over 10 pennies::
 
 
 
-def coins(num_combo):
+def coins(num_combos):
     """Find change from combinations of `num_coins` of dimes and pennies.
 
     This should return a set of the unique amounts of change possible.
@@ -46,11 +46,11 @@ def coins(num_combo):
     results = set()
 
     # for each combination of coins make combo of dimes and pennies
-    for dimes in range(num_combo + 1):
+    for dimes in range(num_combos + 1):
         # pennies = number of combos minus index
         # for 4: 4 - 0 = 4 pennies, 0 dimes
         # for 2: 4 - 2 = 2 pennies, 2 dimes
-        pennies = num_combo - dimes
+        pennies = num_combos - dimes
         results.add(dimes * 10 + pennies)
 
     return results
