@@ -6,7 +6,7 @@ import sys
 
 if __name__ == '__main__':
 
-    N = 3
+    N = random.randint(1, 100)
     if (N % 2) != 0:
         print("Weird")
     else:
