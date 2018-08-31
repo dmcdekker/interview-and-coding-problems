@@ -18,12 +18,10 @@ class Person:
         self.age += 1
         
 
-t = (4)
-for i in range(0, t):
-    age = -1  
-    p = Person(age)  
-    p.amIOld()
-    for j in range(0, 3):
-        p.yearPasses()       
-    p.amIOld()
-    print("")
+
+p = Person(4)  
+p.amIOld()
+p = Person(-1)  
+p.amIOld()
+p = Person(21)  
+p.amIOld()
