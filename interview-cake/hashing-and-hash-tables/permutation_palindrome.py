@@ -2,6 +2,8 @@ import unittest
 
 
 def has_palindrome_permutation(the_string):
+    '''Write an efficient function that checks whether any permutation ↴ 
+       of an input string is a palindrome'''
 
     # Check if any permutation of the input is a palindrome
     is_palindrome = {}

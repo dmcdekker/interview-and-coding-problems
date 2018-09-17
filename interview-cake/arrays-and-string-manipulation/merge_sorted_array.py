@@ -2,6 +2,7 @@ import unittest
 
 
 def merge_lists(my_list, alices_list):
+    '''Write a function to merge our lists of orders into one sorted list'''
     
     if len(my_list) == 0:
         return alices_list

@@ -2,6 +2,8 @@ import unittest
 
 
 def reverse_words(message):
+    '''Write a function reverse_words() that takes a message as a list of characters 
+       and reverses the order of the words in place'''
     # First we reverse all the characters in the entire message
     reverse_characters(message, 0, len(message)-1)
 

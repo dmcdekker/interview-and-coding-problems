@@ -4,6 +4,9 @@ import unittest
 # them on instances of our class instead of passing references
 
 class WordCloudData(object):
+    '''Write code that takes a long string and builds its word 
+       cloud data in a dictionary, where the keys are words and the values 
+       are the number of times the words occurred'''
     
     def __init__(self, input_string):
         self.words_to_counts = {}

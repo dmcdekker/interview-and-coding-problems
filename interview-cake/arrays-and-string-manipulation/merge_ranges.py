@@ -1,7 +1,9 @@
 import unittest
 
-
 def merge_ranges(meetings):
+    '''Write a function merge_ranges() that takes a list of 
+       multiple meeting time ranges and returns a list of condensed 
+       ranges'''
     
     # Sort by start time
     sorted_meetings = sorted(meetings)
@@ -23,7 +25,6 @@ def merge_ranges(meetings):
             merged_meetings.append((current_meeting_start, current_meeting_end))
 
     return merged_meetings
-
 
 # Tests
 

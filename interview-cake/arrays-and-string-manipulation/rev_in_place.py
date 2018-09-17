@@ -2,6 +2,8 @@ import unittest
 
 
 def reverse(list_of_chars):
+    '''Write a function that takes a list of characters 
+       and reverses the letters in place'''
 
     # Reverse the input list of chars in place
     left_idx = 0

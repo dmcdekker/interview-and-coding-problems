@@ -1,4 +1,3 @@
-
 import unittest
 
 # Given a list of words, print a tuple of (first-letter, word) for each word, in order.
@@ -13,6 +12,7 @@ class Test(unittest.TestCase):
             (['this'], ('t', 'this'))
             ]    
          
+
     def test_tuple_word(self):
         for [test_lst, expected] in self.data:
             actual = tuple_word(test_lst)

@@ -2,7 +2,10 @@ import unittest
 
 
 def can_two_movies_fill_flight(movie_lengths, flight_length):
-
+    '''Write a function that takes an integer flight_length (in minutes) 
+       and a list of integers movie_lengths (in minutes) and returns a boolean 
+       indicating whether there are two numbers in movie_lengths whose sum equals 
+       flight_length'''
     # Determine if two movie runtimes add up to the flight length
     movie_lengths_seen = set()
     

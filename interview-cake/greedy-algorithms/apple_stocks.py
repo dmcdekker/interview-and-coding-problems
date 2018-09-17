@@ -1,4 +1,8 @@
 def get_max_profit(stock_prices):
+    '''Write an efficient function that takes stock_prices and 
+       returns the best profit I could have made from one purchase 
+       and one sale of one share of Apple stock yesterday.'''
+       
     # set min price
     min_price = stock_prices[0]
     # Calculate the max profit
