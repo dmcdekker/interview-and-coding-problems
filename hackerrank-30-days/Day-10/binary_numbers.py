@@ -23,7 +23,3 @@ if __name__ == '__main__':
         n //= 2
 
     print(maximum)
-    
-        
-        
-
