@@ -2,6 +2,7 @@ import os
 import hashlib
 
 def find_duplicate_files(starting_directory):
+    ''''''
     files_seen_already = {}
     stack = [starting_directory]
 

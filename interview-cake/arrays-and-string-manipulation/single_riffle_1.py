@@ -2,6 +2,8 @@ import unittest
 
 
 def is_single_riffle(half1, half2, shuffled_deck):
+    '''Write a function to tell us if a deck of cards
+       is a single riffle of the other two halves''' 
     # point to halves
     h1 = 0 # top half
     h2 = 0 # bottom half
