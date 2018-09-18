@@ -2,7 +2,9 @@ import unittest
 
 
 def sort_scores(unsorted_scores, highest_possible_score):
-
+     '''Write a function that takes:
+    1. a list of unsorted_scores
+    2. the highest_possible_score in the game'''
     # List of 0s at indices 0..highest_possible_score
     score_counts = [0] * (highest_possible_score+1)
 
