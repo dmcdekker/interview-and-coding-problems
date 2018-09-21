@@ -10,17 +10,13 @@ var alive = 1;
 
 function Neighbors(Board, x, y){
     var n = 0;
-    
-    for(var dx = -1; dx <= 1; dx++){
-        
-        for(var dy = -1; dy <= 1; dy++){ 
-            
+    for(var dx = -1; dx <= 1; dx++)
+    {
+        for(var dy = -1; dy <= 1; dy++)
+        { 
             if((dx == 0) && (dy == 0)) continue; 
-            
             var ax = (x + dx + xsize) % xsize;
-            
             var ay = (y + dy + ysize) % ysize;
-
             if(Board[ax][ay] == alive)
                 n++;
         }
@@ -79,7 +75,7 @@ function DrawBoard(Board)
 
 function Main()
 {
-    // *** Change this variable to choose a different baord setup from below
+    // *** Change this variable to choose a different board setup from below
     var BoardSetup = "flower";
     
     Board = new Array(xsize);
