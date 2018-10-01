@@ -24,7 +24,7 @@ It cannot use deadly branch (1 in the list).
 """
 
 
-def  lemur(branches):
+def lemur(branches):
     """Return number of jumps needed."""
 
     assert branches[0] == 0, "First branch must be alive"

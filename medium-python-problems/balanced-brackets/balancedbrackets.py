@@ -47,43 +47,48 @@ If you receive a string with no brackets, consider it balanced::
 """
 
 
-def has_balanced_brackets(phrase):
+# def has_balanced_brackets(phrase):
+#     """Does a given string have balanced pairs of brackets?
+
+#     Given a string as input, return True or False depending on whether the
+#     string contains balanced (), {}, [], and/or <>.
+#     """
+#     # put all possible pairs in dict
+#     pairs = {'}':'{', ']':'[', ')':'(', '>':'<'}
+#     # list as stack to hold values
+#     stack = []
+#     # iterate through each char
+#     for char in phrase:
+#         # add to stack if open bracket (values)
+#         if char in pairs.values():
+#             stack.append(char)
+#         # else if key value 
+#         elif char in pairs:
+#           # if empty stack or char doesn't equal what's on top
+#           if not stack or pairs[char] != stack.pop():
+#               return False
+#     return not stack
+
+
+# solution from interview
+def has_balanced_brackets(string):
     """Does a given string have balanced pairs of brackets?
 
     Given a string as input, return True or False depending on whether the
     string contains balanced (), {}, [], and/or <>.
     """
-    # put all possible pairs in dict
-    pairs = {'}':'{', ']':'[', ')':'(', '>':'<'}
-    # list as stack to hold values
+    if not string:
+        raise ValueError('String is empty')
+    bracket_dict = {')':'(', ']':'[', '>':'<', '}':'{'}
+    vals = set(bracket_dict.values())
     stack = []
-    # iterate through each char
-    for char in phrase:
-        # add to stack if open bracket (values)
-        if char in pairs.values():
+    for char in string:
+        if char in vals:
             stack.append(char)
-        # else if key value 
-        elif char in pairs:
-            # if empty stack or char doesn't equal what's on top
-          if not stack or pairs[char] != stack.pop():
-              return False
+        elif char in bracket_dict:
+            if not stack or bracket_dict[char] != stack.pop():
+                return False
     return not stack
-
-
-# solution from interview
-# def balanced_brackets(string):
-#     if not string:
-#         raise ValueError('String is empty')
-#     bracket_dict = {')':'(', ']':'['}
-#     vals = set(bracket_dict.values())
-#     stack = []
-#     for char in string:
-#         if char in vals:
-#             stack.append(char)
-#         elif char in bracket_dict:
-#             if not stack or bracket_dict[char] != stack.pop():
-#                 return False
-#     return not stack
 
 # tests = [
 #     ("", "String is empty"),
@@ -158,4 +163,4 @@ def has_balanced_brackets(phrase):
 if __name__ == '__main__':
     import doctest
     if doctest.testmod().failed == 0:
-        print "\n*** ALL TESTS PASSED. YOU CAUGHT ALL THE STRAY BRACKETS!\n"
+        print("\n*** ALL TESTS PASSED. YOU CAUGHT ALL THE STRAY BRACKETS!\n")

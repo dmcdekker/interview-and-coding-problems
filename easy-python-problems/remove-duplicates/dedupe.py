@@ -33,7 +33,6 @@ An empty list should return an empty list::
 
 """
 
-
 def deduped(items):
     """Return new list from items with duplicates removed."""
     de_dupe = set(items)

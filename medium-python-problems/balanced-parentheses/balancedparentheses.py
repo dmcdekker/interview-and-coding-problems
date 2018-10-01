@@ -36,16 +36,16 @@ def has_balanced_parens(phrase):
         
       elif char == ')':
         open_ -= 1
-
-      if open_ == -1:
-        return False 
+        
+        if open_ == -1:
+          return False 
        
     return open_ == 0   
-
+  
         
 
 
 if __name__ == '__main__':
     import doctest
     if doctest.testmod().failed == 0:
-        print "\n*** ALL TESTS PASSED. YOU CAUGHT ALL THE STRAY PARENS!\n"
+        print("\n*** ALL TESTS PASSED. YOU CAUGHT ALL THE STRAY PARENS!\n")
