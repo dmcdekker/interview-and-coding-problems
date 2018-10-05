@@ -12,25 +12,33 @@ def minimum_swaps(a):
     # make copy of sorted list
     sorted_list = sorted(a)
     swaps = 0
-    
     # iterate through list and compare index positions of values
     for i in range(0, len(a)):
-        
         if a[i] != sorted_list[i]:
-   
             # increment swaps int
-            swaps += 1
-          
+            swaps += 1     
             # get index of the sorted value from dict
             ind_to_swap = m[sorted_list[i]]
-
             # update value of current list elem with sorted list value
-            m[a[i]] = m[sorted_list[i]]
-            
+            m[a[i]] = m[sorted_list[i]]    
             # swap list current value with sorted value
-            a[i], a[ind_to_swap] = sorted_list[i], a[i]
-           
+            a[i], a[ind_to_swap] = sorted_list[i], a[i]     
     return swaps
+
+# alt solution
+n = int(input())
+arr = list(map(int, input().split()))
+swaps = 0
+
+for i in range(0, n - 1):
+    while arr[i] != i + 1:
+        t = arr[arr[i] - 1]
+        arr[arr[i] - 1] = arr[i]
+        arr[i] = t
+        swaps += 1
+
+print(swaps)
+
 
 class Test(unittest.TestCase):
 

@@ -29,7 +29,7 @@ def min_bribes(queue):
     print(swap)
     return swap
 
-    # alt solution
+# alt solution
 def minimum_bribes(q):
     bribes = 0
     for i in range(len(q)-1,-1,-1):

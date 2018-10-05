@@ -5,7 +5,6 @@ def rotLeft(a, d):
     return a[d:] + a[:d]
 
 
-
 class Test(unittest.TestCase):
 
     def test_rotate_4(self):
