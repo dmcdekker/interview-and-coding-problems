@@ -1,6 +1,7 @@
 import unittest
 
 def matching_strings(strings, queries):
+    '''Return occurences of queries in strings'''
     result = [] 
     for q in queries: 
         result.append(strings.count(q)) 
