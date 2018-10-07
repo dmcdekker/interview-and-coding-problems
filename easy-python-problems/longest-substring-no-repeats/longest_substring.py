@@ -19,12 +19,12 @@ def length_of_longest_substring_no_repeats(s):
         for index in range(len(s)):
             # use set for unique chars
             seen = set()
+            # keep track while going along: look at each substring
             for letter in s[index:]:
                 if letter in seen:
                     break
                 # add if not in seen
                 seen.add(letter)
-            # return 
             longest = max(longest, len(seen))
         return longest
 
