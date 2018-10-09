@@ -25,6 +25,7 @@ def bfs_1(graph, start):
     return visited
 
 def bfs_2(graph, start):
+    '''Returns all nodes in a graph'''
     # keep track of all visited nodes
     explored = set()
     # keep track of nodes to be checked
@@ -56,6 +57,7 @@ def bfs_paths(graph, start, goal):
 
 
 def shortest_path(graph, start, goal):
+    '''Returns shortest_path in between 2 nodes'''
     try:
         return next(bfs_paths(graph, start, goal))
     except StopIteration:
@@ -63,8 +65,9 @@ def shortest_path(graph, start, goal):
 
 
 def bfs_shortest_path(graph, start, goal):
+    '''Returns shortest_path in between 2 nodes'''
     # keep track of explored nodes
-    explored = []
+    explored = set()
     # keep track of all the paths to be checked
     queue = [[start]]
     # return path if start is goal
@@ -90,7 +93,7 @@ def bfs_shortest_path(graph, start, goal):
                     return new_path
  
             # mark node as explored
-            explored.append(node)
+            explored.add(node)
  
     # in case there's no path between the 2 nodes
     return 'No connecting path exists :('

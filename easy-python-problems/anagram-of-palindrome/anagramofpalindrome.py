@@ -26,7 +26,6 @@ Examples::
 
 """
 
-
 def is_anagram_of_palindrome(word):
     """Is the word an anagram of a palindrome?""" 
     is_palindrome = {}

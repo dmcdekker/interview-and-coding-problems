@@ -1,9 +1,4 @@
-graph = {'A': set(['B', 'C']),
-         'B': set(['A', 'D', 'E']),
-         'C': set(['A', 'F']),
-         'D': set(['B']),
-         'E': set(['B', 'F']),
-         'F': set(['C', 'E'])}
+import unittest 
 
 #    A
 #  /   \
@@ -15,7 +10,7 @@ graph = {'A': set(['B', 'C']),
 #    F _/ 
 
 
-def dfs_iterative(graph, start):
+def dfs_iterative_1(graph, start):
     visited= set()
     stack = [start]
     while stack:
@@ -25,7 +20,21 @@ def dfs_iterative(graph, start):
             stack.extend(graph[vertex] - visited)
     return visited
 
-print(dfs_iterative(graph, 'A')) # {'E', 'D', 'F', 'A', 'C', 'B'}
+def dfs_iterative_2(graph, start):
+    # keep track of paths
+    stack = [start] 
+    # keep track of explored nodes
+    explored = set()
+    # iterate thrpug
+    while stack:
+        vertex = stack.pop()
+        if vertex in explored:
+            continue
+        explored.add(vertex)
+        for neighbor in graph[vertex]:
+            stack.append(neighbor)
+
+    return explored
 
 def dfs_recursive(graph, start, visited=None):
     if visited is None:
@@ -34,8 +43,6 @@ def dfs_recursive(graph, start, visited=None):
     for next in graph[start] - visited:
         dfs_recursive(graph, next, visited)
     return visited
-
-print(dfs_recursive(graph, 'C')) # {'E', 'D', 'F', 'A', 'C', 'B'}
 
 def dfs_paths(graph, start, goal):
     stack = [(start, [start])]
@@ -47,7 +54,50 @@ def dfs_paths(graph, start, goal):
             else:
                 stack.append((next, path + [next]))
 
-print(list(dfs_paths(graph, 'A', 'F'))) # [['A', 'C', 'F'], ['A', 'B', 'E', 'F']]
+
+class Test(unittest.TestCase):
+
+    def test_dfs_iterative_1(self):
+        actual = dfs_iterative_1({'A': set(['B', 'C']),
+                                'B': set(['A', 'D', 'E']),
+                                'C': set(['A', 'F']),
+                                'D': set(['B']),
+                                'E': set(['B', 'F']),
+                                'F': set(['C', 'E'])}, 'A')
+        expected = ({'E', 'D', 'F', 'A', 'C', 'B'})
+        self.assertEqual(actual, expected)
+
+    def test_dfs_iterative_2(self):
+        actual = dfs_iterative_2({'A': set(['B', 'C']),
+                                'B': set(['A', 'D', 'E']),
+                                'C': set(['A', 'F']),
+                                'D': set(['B']),
+                                'E': set(['B', 'F']),
+                                'F': set(['C', 'E'])}, 'A')
+        expected = ({'E', 'D', 'F', 'A', 'C', 'B'})
+        self.assertEqual(actual, expected)
+
+    def test_dfs_recursive(self):
+        actual = dfs_recursive({'A': set(['B', 'C']),
+                                'B': set(['A', 'D', 'E']),
+                                'C': set(['A', 'F']),
+                                'D': set(['B']),
+                                'E': set(['B', 'F']),
+                                'F': set(['C', 'E'])}, 'A')
+        expected = ({'E', 'D', 'F', 'A', 'C', 'B'})
+        self.assertEqual(actual, expected)
+
+    def test_dfs_paths(self):
+        input_graph = ({'A': set(['B', 'C']),
+                        'B': set(['A', 'D', 'E']),
+                        'C': set(['A', 'F']),
+                        'D': set(['B']),
+                        'E': set(['B', 'F']),
+                        'F': set(['C', 'E'])})
+        expected_result = ([['A', 'C', 'F'], ['A', 'B', 'E', 'F']])
+        result = list(dfs_paths(input_graph, 'A', 'F'))
+        self.assertEqual(expected_result, result)
 
 
+unittest.main(verbosity=2)
 

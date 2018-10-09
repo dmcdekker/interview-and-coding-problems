@@ -23,16 +23,18 @@ Longer patterns should work::
     'hey'
 """
 
-
 def decode(s):
     """Decode a string."""
     new_str = ''
     idx = 0
     while idx < len(s):
+        # define how many to skip if element is a number
         skip = int(s[idx])
+        # skip to following element
         idx += skip + 1
+        # add letter to string
         new_str += s[idx]
-    
+        # go to next element
         idx += 1
             
     return new_str    
@@ -41,4 +43,4 @@ def decode(s):
 if __name__ == '__main__':
     import doctest
     if doctest.testmod().failed == 0:
-        print "\n*** ALL TESTS PASSED; 0G1ar0e1ba0t2ab! ***\n"
+        print("\n*** ALL TESTS PASSED; 0G1ar0e1ba0t2ab! ***\n")
