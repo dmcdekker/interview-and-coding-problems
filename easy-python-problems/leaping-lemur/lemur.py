@@ -27,14 +27,15 @@ It cannot use deadly branch (1 in the list).
 def lemur(branches):
     """Return number of jumps needed."""
 
-    assert branches[0] == 0, "First branch must be alive"
-    assert branches[-1] == 0, "Last branch must be alive"
+    # assert branches[0] == 0, "First branch must be alive"
+    # assert branches[-1] == 0, "Last branch must be alive"
 
     count = 0
     idx = 0
     while idx < len(branches) - 1: 
         idx += 2
         if idx >= len(branches) or branches[idx] == 1:
+            # We can jump this far, so only jump 1
             idx -= 1
         count += 1    
 
@@ -45,4 +46,4 @@ def lemur(branches):
 if __name__ == '__main__':
     import doctest
     if doctest.testmod().failed == 0:
-        print "\n*** ALL TESTS PASSED. NICE JUMPING!\n"
+        print("\n*** ALL TESTS PASSED. NICE JUMPING!\n")

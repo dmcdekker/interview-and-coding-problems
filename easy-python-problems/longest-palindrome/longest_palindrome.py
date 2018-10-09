@@ -7,7 +7,7 @@ def substrings(s):
         """
         length = len(s)
         results = []
-        # generate substrings (start at end index, end at first index, step -1)
+        # generate substrings (start at end index, end at index 0, step -1)
         for substring in range(length, 0, -1):
             for index in range(length - substring + 1):
                 results.append(s[index: index+substring])

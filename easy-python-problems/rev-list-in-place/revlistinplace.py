@@ -42,6 +42,11 @@ def rev_list_in_place(lst):
     You cannot do this with reversed(), .reverse(), or list slice
     assignment!
     """
+    
+    # list
+    # 1 2 3 4 5
+    # 5 2 3 4 1
+    # 5 4 3 2 1
 
     # intializing pointers
     left = 0
@@ -49,8 +54,11 @@ def rev_list_in_place(lst):
 
     # condition for termination
     while left < right:
+        # temp variable assigned to value of left
         temp = lst[left]
+        # swap values
         lst[left] = lst[right]
+        # right variable assigned to original left val
         lst[right] = temp
 
         # move pointers
