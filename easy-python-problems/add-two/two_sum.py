@@ -4,12 +4,15 @@ import unittest
 
 def two_sum_v1(nums, target):
     num_dict = {}
-    for idx, val in enumerate(nums):
-        diff = target - val
+    for idx, num in enumerate(nums):  
+        diff = target - num   
         if diff in num_dict:
             return [num_dict[diff], idx]
-        num_dict[val] = idx
+        else:
+            num_dict[num] = idx
+            
     return '{}'.format('No matches')
+
 
 def two_sum_v2(arr, num):
     i = 0

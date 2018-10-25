@@ -25,15 +25,16 @@ def dfs_iterative_2(graph, start):
     stack = [start] 
     # keep track of explored nodes
     explored = set()
-    # iterate thrpug
+    # iterate through graph until reach deadend
     while stack:
+        # add last item to explored if not in there
         vertex = stack.pop()
         if vertex in explored:
             continue
         explored.add(vertex)
+        # add neighbor to stack 
         for neighbor in graph[vertex]:
             stack.append(neighbor)
-
     return explored
 
 def dfs_recursive(graph, start, visited=None):

@@ -13,6 +13,7 @@ def reverse(num):
         """
         rev_str = str(num)[::-1]
         if rev_str[-1] is '-':
+            # if negative: take out minus sign and multiply by -1
             rev_str = int(rev_str.replace('-', '')) * (-1)
         return int(rev_str) if int(rev_str) >= -2**31 and int(rev_str) <= (2**31)-1 else 0
 
@@ -28,7 +29,7 @@ class Test(unittest.TestCase):
         expected = 1987654321
         self.assertEqual(actual, expected)
 
-    def test_reverse_2(self):
+    def test_reverse_3(self):
         actual = reverse(-123)
         expected = -321
         self.assertEqual(actual, expected)

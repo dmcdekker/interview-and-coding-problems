@@ -12,7 +12,6 @@ class Test(unittest.TestCase):
             (['this'], ('t', 'this'))
             ]    
          
-
     def test_tuple_word(self):
         for [test_lst, expected] in self.data:
             actual = tuple_word(test_lst)

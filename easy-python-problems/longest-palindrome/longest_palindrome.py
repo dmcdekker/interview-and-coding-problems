@@ -10,6 +10,7 @@ def substrings(s):
         # generate substrings (start at end index, end at index 0, step -1)
         for substring in range(length, 0, -1):
             for index in range(length - substring + 1):
+                # slice words and add to results
                 results.append(s[index: index+substring])
         return results
 

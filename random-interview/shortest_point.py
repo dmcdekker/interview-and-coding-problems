@@ -10,9 +10,6 @@ def shortest_point(matrix):
                 found_row.append(row_num)
                 found_col.append(col_num)
 
-    # print(found_row)
-    # print(found_col)
-
     first_coord = abs(found_row[1] - found_row[0])
     second_coord = abs(found_col[1] - found_col[0])
     

@@ -33,6 +33,7 @@ def lemur(branches):
     count = 0
     idx = 0
     while idx < len(branches) - 1: 
+        # jump two branches immediately and check if branch is dead
         idx += 2
         if idx >= len(branches) or branches[idx] == 1:
             # We can jump this far, so only jump 1
