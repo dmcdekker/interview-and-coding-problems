@@ -5,9 +5,11 @@ import unittest
 def two_sum_v1(nums, target):
     num_dict = {}
     for idx, num in enumerate(nums):  
-        diff = target - num   
+        diff = target - num
+        # if the difference has already been recorded return it   
         if diff in num_dict:
             return [num_dict[diff], idx]
+        # or add to the dictionary
         else:
             num_dict[num] = idx
             
