@@ -11,7 +11,7 @@ def number_is_palindrome(x):
         while x:
             num = x % 10
             new_arr.append(int(num))
-            x = (x - num) / 10
+            x = (x - num) / 10)
 
         return new_arr == new_arr[::-1]
 
