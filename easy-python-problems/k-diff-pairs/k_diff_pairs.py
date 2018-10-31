@@ -1,6 +1,7 @@
 import unittest
 import collections
-
+'''Given an array of integers and an integer k, find 
+the number of unique k-diff pairs in the array'''
 
 
 def find_pairs_1(nums, k):
