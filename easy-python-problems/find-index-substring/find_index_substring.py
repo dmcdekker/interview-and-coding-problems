@@ -1,16 +1,13 @@
 import unittest
 
 def find_index_substring(haystack, needle):
-        """
-        :type haystack: str
-        :type needle: str
-        :rtype: int
-        """
-        if needle == '':
-            return 0
-        if needle in haystack:
-            return haystack.index(needle)
-        return -1
+    '''Return first index of substring'''
+    if needle == '':
+        return 0
+    if needle in haystack:
+        return haystack.find(needle)
+        # can use .index() instead of .find()
+    return -1
 
 class Test(unittest.TestCase):
 

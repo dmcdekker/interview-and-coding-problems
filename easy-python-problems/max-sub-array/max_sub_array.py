@@ -11,8 +11,6 @@ def max_sub_array(nums):
     #     max_current = max(max_current, max_ending)
     # return max_current
 
-    
-
     # max_ending: look for all positive contiguous segments of the array
     # max_current = maximum sum contiguous segment among all positive segments
 

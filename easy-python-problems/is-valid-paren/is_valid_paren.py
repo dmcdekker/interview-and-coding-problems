@@ -1,11 +1,8 @@
 import unittest
 
 def is_valid(string):
-
-    """
-    :type s: str
-    :rtype: bool
-    """
+    '''Check if string contains balanced parens'''
+    
     if not string:
         raise ValueError('Empty String')
     paren_dict = {')':'(', ']':'[', '}':'{'}

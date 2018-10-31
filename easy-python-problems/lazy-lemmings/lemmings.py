@@ -22,15 +22,16 @@ Find the farthest any single lemming needs to travel for food.
 def furthest(num_holes, cafes):
     """Find longest distance between a hole and a cafe."""
     # declare max distance
-    max_dist = 0
+    worst = 0
     # calc distance all cafes to each hole
     for hole in range(num_holes):
-        # choose smallest distance
+        # keep track of smallest distances
         distance = min([abs(hole - cafe) for cafe in cafes])
-        # keep track of longest distance
-        max_dist = max(max_dist, distance)
-          
-    return max_dist      
+
+        # keep track of worst distance
+        worst = max(worst, distance)
+
+    return worst      
 
 
 if __name__ == '__main__':

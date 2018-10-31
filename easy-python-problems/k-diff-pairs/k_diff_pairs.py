@@ -1,8 +1,8 @@
 import unittest
 import collections
+
 '''Given an array of integers and an integer k, find 
 the number of unique k-diff pairs in the array'''
-
 
 def find_pairs_1(nums, k):
     lst_tupes = set()
@@ -15,17 +15,16 @@ def find_pairs_1(nums, k):
                 elif num1 == num2:
                     lst_tupes.add((num1, num2))
 
-
     return len(lst_tupes)
 
     
-def find_pairs_2(nums, diff):
+def find_pairs_2(nums, k):
     result = 0
     count_nums = collections.Counter(nums)
     for number in count_nums:
         # if the diff is > 0 and the number plus diff is in count nums
         # or if diff == 0 and there is more than one occurence of the same number
-        if diff > 0 and number + diff in count_nums or diff == 0 and count_nums[number] > 1:
+        if k > 0 and number + k in count_nums or k == 0 and count_nums[number] > 1:
             result += 1
     return result
 

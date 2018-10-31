@@ -39,8 +39,6 @@ def is_anagram_of_palindrome(word):
     return count <= 1        
 
 
-
-
 if __name__ == '__main__':
     import doctest
 

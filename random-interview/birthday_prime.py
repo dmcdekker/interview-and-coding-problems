@@ -3,19 +3,13 @@ all the prime numbers that include the second digit of my birthday'''
 
 import unittest
 
-
-
 def bday_prime(bday, lst):
     arr_of_primes = []
     bday_split = bday.split('/')
     second_digit = bday_split[0][1]
     for num in lst:
-        if (str(second_digit) in str(num)):
-            if not is_prime(num):
-                continue
-            else:
-                arr_of_primes.append(num)
-
+        if (str(second_digit) in str(num)) and is_prime(num):
+            arr_of_primes.append(num)
     return arr_of_primes
         
 def is_prime(num):

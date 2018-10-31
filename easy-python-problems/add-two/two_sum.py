@@ -15,7 +15,6 @@ def two_sum_v1(nums, target):
             
     return '{}'.format('No matches')
 
-
 def two_sum_v2(arr, num):
     i = 0
     j = len(arr) - 1
